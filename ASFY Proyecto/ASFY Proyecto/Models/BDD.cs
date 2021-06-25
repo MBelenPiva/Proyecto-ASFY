@@ -54,7 +54,7 @@ namespace ASFY_Proyecto.Models
             return listaRutinas;
         }
 
-        public static List<Programas> ObtenerProgramas(int codigo)
+        public static List<Programas> ObtenerProgramas()
         {
             List<Programas> listaProgramas = new List<Programas>();
             SqlConnection con = BDD.Conectar();

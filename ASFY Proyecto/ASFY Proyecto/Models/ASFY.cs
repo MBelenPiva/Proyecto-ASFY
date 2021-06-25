@@ -94,12 +94,12 @@ namespace ASFY_Proyecto.Models
             return _listaRutinasPorProgramas;
         }
 
-       // public static void InicializarASFY()
-        //{
+        public static void InicializarASFY()
+        {
 
-          //  _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
+          _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
             //_listaProgramas = BDD.ObtenerProgramas();
-        //}
+        }
 
         public static Rutinas ObtenerRutinas(int codigo)
         {
