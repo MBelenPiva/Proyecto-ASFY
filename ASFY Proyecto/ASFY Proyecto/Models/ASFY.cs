@@ -10,7 +10,7 @@ namespace ASFY_Proyecto.Models
     {
         private static List<Rutinas> _listaRutinas = new List<Rutinas>();
         private static List<RutinasPorProgramas> _listaRutinasPorProgramas = new List<RutinasPorProgramas>();
-        private static List<RutinasPorProgramas> _listaProgramas = new List<RutinasPorProgramas>();
+        private static List<Programas> _listaProgramas = new List<Programas>();
 
 
         public static List<Rutinas> listaRutinas
@@ -38,7 +38,7 @@ namespace ASFY_Proyecto.Models
             }
         }
 
-        public static List<RutinasPorProgramas> listaProgramas
+        public static List<Programas> listaProgramas
         {
             get
             {
@@ -57,7 +57,7 @@ namespace ASFY_Proyecto.Models
             return _listaRutinas;
         }
 
-        public static List<RutinasPorProgramas> ListarProgramas()
+        public static List<Programas> ListarProgramas()
         {
             return _listaProgramas;
         }
@@ -78,11 +78,11 @@ namespace ASFY_Proyecto.Models
         public static List<RutinasPorProgramas> ListarProgramas(int codigo)
         {
             List<RutinasPorProgramas> devolver = new List<RutinasPorProgramas>();
-            for (int k = 0; k < _listaProgramas.Count; k++)
+            for (int k = 0; k < _listaRutinasPorProgramas.Count; k++)
             {
-                if (codigo == _listaProgramas[k].codigo)
+                if (codigo == _listaRutinasPorProgramas[k].codigo)
                 {
-                    devolver.Add(_listaProgramas[k]);
+                    devolver.Add(_listaRutinasPorProgramas[k]);
                 }
             }
             return devolver;
@@ -109,7 +109,7 @@ namespace ASFY_Proyecto.Models
 
         public static RutinasPorProgramas Programas(int codigo)
         {
-            RutinasPorProgramas programas = _listaProgramas.Find(x => x.codigo.Equals(codigo));
+            RutinasPorProgramas programas = _listaRutinasPorProgramas.Find(x => x.codigo.Equals(codigo));
             return programas;  //Devuelve una lista de los programas
         }
 
