@@ -92,7 +92,7 @@ body {
 
     .modal-content {
         padding: 1rem;
-    } 
+    }
 }
 
 .modal-header.close {
@@ -112,113 +112,152 @@ body {
     padding: 0.3rem 0rem;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
+button {
+    width: 110px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
 }
 
-html {
-    font-size: 62.5%;
+/* CALENDARIO */
+
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    background-color: #12121f;
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.calendar {
-    width: 45rem;
-    height: 52rem;
-    background-color: #222227;
-    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-}
 
-.month {
-    width: 100%;
-    height: 12rem;
-    background-color: #167e56;
+#header {
+    padding: 5px;
+    color: #000000;
+    font-size: 22px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+}
+
+    #header button {
+        background-color: #999da3;
+        width: 120px;
+        font-size: 15px;
+        color: #000000;
+    }
+
+#monthDisplay {
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-    .month i {
-        font-size: 2.5rem;
-        cursor: pointer;
-    }
+#container {
+    width: 770px;
+}
 
-    .month h1 {
-        font-size: 3rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .month p {
-        font-size: 1.6rem;
-    }
-
-.weekdays {
+#weekdays {
     width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
     display: flex;
-    align-items: center;
+    color: #000000;
 }
 
-    .weekdays div {
-        font-size: 1.5rem;
-        font-weight: 400;
-        letter-spacing: 0.1rem;
-        width: calc(44.2rem / 7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    #weekdays div {
+        width: 110px;
+        padding: 20px;
     }
 
-.days {
+#calendar {
     width: 100%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    padding: 0.2rem;
 }
 
-    .days div {
-        font-size: 1.4rem;
-        margin: 0.3rem;
-        width: calc(40.2rem / 7);
-        height: 5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-        transition: background-color 0.2s;
+.day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .day:hover {
+        background-color: #e0e0e0;
     }
 
-        .days div:hover:not(.today) {
-            background-color: #262626;
-            border: 0.2rem solid #777;
-            cursor: pointer;
-        }
+    .day + #currentDay {
+        background-color: #999da3;
+    }
 
-.prev-date,
-.next-date {
-    opacity: 0.5;
+.event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: #999da3;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
 }
 
-.today {
-    background-color: #167e56;
+.padding {
+    cursor: default !important;
+    background-color: #999da3 !important;
+}
+
+#newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 25;
+    padding: 25px;
+    background-color: #999da3;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 180px;
+    left: calc(50% - 175px);
+    position: absolute;
+}
+
+#eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+}
+
+    #eventTitleInput.error {
+        border: 2px solid red;
+    }
+
+#cancelButton, #deleteButton {
+    background-color: #808080;
+}
+
+#saveButton, #closeButton {
+    background-color: #808080;
+}
+
+#eventText {
+    font-size: 14px;
+}
+
+#modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
 }
