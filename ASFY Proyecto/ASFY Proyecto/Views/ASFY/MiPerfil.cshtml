@@ -88,29 +88,55 @@
             <br>
         </div>
 
-        <H1 class="text-center"><strong> Calendario 2021 </strong></H1>
-        <div class="container">
-            <div class="calendar">
-                <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                    <i class="fas fa-angle-right next"></i>
-                </div>
-                <div class="weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
-                </div>
-                <div class="days"></div>
-            </div>
-        </div>
-        <br>
+        <br />
         <br>
 
+        <center>
+            <h1 class="titulo">Mi calendario</h1>
+            <br />
+            <div id="container">
+                <div id="header">
+                    <div id="monthDisplay"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        <br />
+                        <button id="backButton">Atrás</button>
+                        <button id="nextButton">Siguiente</button>
+                    </div>
+                </div>
+
+                <div id="weekdays">
+                    <div>Domingo</div>
+                    <div>Lunes</div>
+                    <div>Martes</div>
+                    <div>Miércoles</div>
+                    <div>Jueves</div>
+                    <div>Viernes</div>
+                    <div>Sábado</div>
+                </div>
+
+                <div id="calendar"></div>
+            </div>
+
+            <div id="newEventModal">
+                <h2>Nuevo</h2>
+
+                <input id="eventTitleInput" placeholder="Agregar aquí" />
+
+                <button id="saveButton">Guardar</button>
+                <button id="cancelButton">Cancelar</button>
+            </div>
+
+            <div id="deleteEventModal">
+                <h2>Evento</h2>
+
+                <p id="eventText"></p>
+
+                <button id="deleteButton">Eliminar</button>
+                <button id="closeButton">Cerrar</button>
+            </div>
+
+            <div id="modalBackDrop"></div>
+        </center>
