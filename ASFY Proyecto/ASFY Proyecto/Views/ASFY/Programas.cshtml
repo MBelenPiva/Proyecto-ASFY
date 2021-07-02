@@ -1,4 +1,5 @@
 ﻿@using ASFY_Proyecto.Models;
+
 @{
     ViewBag.Title = "Programas";
 }
@@ -20,11 +21,12 @@
             <tr>
                 <td>@programas.Nombre</td>
                 <td>@programas.Descripcion</td>
-                @Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoPrograma = @programas.codigo });
+                @Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoPrograma = programas.codigo }, null);
             </tr>
-       
-}
-         </table>
-    </div>
-        <br>
-        <br>
+
+        }
+    </table>
+</div>
+<br>
+<br>
+
