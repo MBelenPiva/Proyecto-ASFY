@@ -47,7 +47,7 @@ namespace ASFY_Proyecto.Models
                 
 
 
-                Rutinas rutinas = new Rutinas(Id, IdProgrmas, Nombre);
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
                 listaRutinas.Add(rutinas);
             }
             BDD.Desconectar(con);
@@ -90,7 +90,7 @@ namespace ASFY_Proyecto.Models
                 int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();  
 
-                Rutinas rutinas = new Rutinas(Id, IdProgrmas, Nombre);
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas);
                 listaRutinasPorProgramas.Add(rutinas);
             }
             BDD.Desconectar(con);
