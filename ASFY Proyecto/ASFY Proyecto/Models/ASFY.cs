@@ -98,7 +98,7 @@ namespace ASFY_Proyecto.Models
         {
 
           _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
-            //_listaProgramas = BDD.ObtenerProgramas();
+            _listaProgramas = BDD.ObtenerProgramas();
         }
 
         public static Rutinas ObtenerRutinas(int codigo)
