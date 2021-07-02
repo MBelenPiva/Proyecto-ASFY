@@ -62,18 +62,18 @@ namespace ASFY_Proyecto.Models
             return _listaProgramas;
         }
 
-        public static List<Rutinas> ListarRutinas(int codigoProgramas)
-        {
-            List<Rutinas> devolver = new List<Rutinas>();
-            for (int k = 0; k < _listaProgramas.Count; k++)
-            {
-                if (codigoProgramas == _listaRutinasPorProgramas[k].codigo)
-                {
-                    devolver.Add(_listaRutinas[k]);
-                }
-            }
-            return devolver;
-        }
+       // public static List<Rutinas> ListarRutinas(int codigoProgramas)
+        //{
+          //  List<Rutinas> devolver = new List<Rutinas>();
+            //for (int k = 0; k < _listaProgramas.Count; k++)
+            //{
+            //    if (codigoProgramas == _listaRutinasPorProgramas[k].codigo)
+             //   {
+                 //   devolver.Add(_listaRutinas[k]);
+               // }
+            //}
+            //return devolver;
+        //}
 
         public static List<RutinasPorProgramas> ListarProgramas(int codigo)
         {
@@ -96,8 +96,7 @@ namespace ASFY_Proyecto.Models
 
         public static void InicializarASFY()
         {
-
-          _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
+            _listaRutinas = BDD.ObtenerRutinas(); //Guardo la lista de rutinas invocando a obtener rutinas que accede a la base de datos
             _listaProgramas = BDD.ObtenerProgramas();
         }
 
@@ -107,11 +106,7 @@ namespace ASFY_Proyecto.Models
             return rutinas; //Devuelvo las rutinas 
         }
 
-        public static RutinasPorProgramas Programas(int codigo)
-        {
-            RutinasPorProgramas programas = _listaRutinasPorProgramas.Find(x => x.codigo.Equals(codigo));
-            return programas;  //Devuelve una lista de los programas
-        }
+       
 
     }
 
