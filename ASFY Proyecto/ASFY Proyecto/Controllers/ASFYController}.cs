@@ -11,7 +11,7 @@ namespace ASFY_Proyecto.Controllers
     {
         public ActionResult InicioSesion()
         {
-           ASFY.InicializarASFY();//
+           ASFY.InicializarASFY();
             return View();
         }
 
