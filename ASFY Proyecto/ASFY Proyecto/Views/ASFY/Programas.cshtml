@@ -6,27 +6,25 @@
 <br>
 <br>
 
-@foreach (Programas programas in ViewBag.Programas)
-{
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+            </tr>
+        </thead>
 
-    <div class="container">
-        <table class="table">
-            <tbody>
-                <tr><br>
-                    <th scope="row">Nombre</th><br>
-                    <td>@programas.Nombre</td>
-                </tr>
-                <tr><br>
-                    <th scope="row">Descripción</th><br>
-                    <td>@programas.Descripcion</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
+        @foreach (Programas programas in ViewBag.Programas)
+        {
+            <tr>
+                <td>@programas.Nombre</td>
+                <td>@programas.Descripcion</td>
+                @Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoPrograma = @programas.codigo });
+            </tr>
+       
 }
-
-
-
-<br>
-<br>
+         </table>
+    </div>
+        <br>
+        <br>

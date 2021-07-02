@@ -62,7 +62,7 @@ namespace ASFY_Proyecto.Models
             return _listaProgramas;
         }
 
-       // public static List<Rutinas> ListarRutinas(int codigoProgramas)
+       //public static List<Rutinas> ListarRutinas(int codigoProgramas)
         //{
           //  List<Rutinas> devolver = new List<Rutinas>();
             //for (int k = 0; k < _listaProgramas.Count; k++)
