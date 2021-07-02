@@ -21,10 +21,10 @@
             <tr>
                 <td>@programas.Nombre</td>
                 <td>@programas.Descripcion</td>
-                @Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoPrograma = programas.codigo }, null);
+                @Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoProgramas = programas.codigo }, null);
             </tr>
 
-        }
+        }   
     </table>
 </div>
 <br>

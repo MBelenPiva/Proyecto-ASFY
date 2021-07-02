@@ -62,18 +62,18 @@ namespace ASFY_Proyecto.Models
             return _listaProgramas;
         }
 
-       //public static List<Rutinas> ListarRutinas(int codigoProgramas)
-        //{
-          //  List<Rutinas> devolver = new List<Rutinas>();
-            //for (int k = 0; k < _listaProgramas.Count; k++)
-            //{
-            //    if (codigoProgramas == _listaRutinasPorProgramas[k].codigo)
-             //   {
-                 //   devolver.Add(_listaRutinas[k]);
-               // }
-            //}
-            //return devolver;
-        //}
+       public static List<Rutinas> ListarRutinas(int codigoProgramas)
+        {
+            List<Rutinas> devolver = new List<Rutinas>();
+            for (int k = 0; k < _listaProgramas.Count; k++)
+            {
+               if (codigoProgramas == _listaRutinasPorProgramas[k].codigo)
+               {
+                   devolver.Add(_listaRutinas[k]);
+               }
+            }
+            return devolver;
+        }
 
         public static List<RutinasPorProgramas> ListarProgramas(int codigo)
         {
