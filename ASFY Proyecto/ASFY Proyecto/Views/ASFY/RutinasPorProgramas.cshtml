@@ -1,39 +1,36 @@
 ﻿@using ASFY_Proyecto.Models;
 @{
-    ViewBag.Title = "Programas";
-}
-
-<br>
-<br>
-
-
-@foreach (Rutinas rutinas in ViewBag.RutinasMostrarProgramas)
-{
-
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Numero de Programa</th>
-                    <th scope="col">Rutinas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>@rutinas.Nombre</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>@rutinas.codigoProgramas</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
+    ViewBag.Title = "RutinasPorProgramas";
 }
 
 
+<br>
+<br>
 
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Repeticiones</th>
+                <th scope="col">
+
+                </th>
+            </tr>
+        </thead>
+
+        @foreach (Rutinas rutinas in ViewBag.RutinasMostrarProgramas)
+        {
+            <tr>
+                <td>@rutinas.Nombre</td>
+                <td>15 minutos </td>
+            </tr>
+
+        }
+    </table>
+</div>
 <br>
 <br>
+
+
+

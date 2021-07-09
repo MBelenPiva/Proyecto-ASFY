@@ -1,37 +1,100 @@
-﻿body {
+﻿
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: darkred;
+    background-color: #F6FAFB;
     font-family: 'Century Gothic';
+    font-size: 15px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+footer {
+    background-color: #1B262C;
 }
 
 
-/* Mi perfil */
+
+.navbar {
+    background-color: #1B262C;
+}
+
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+
+        .navbar .navbar-brand:hover,
+        .navbar .navbar-brand:focus {
+            color: #ffffff;
+        }
+
+    .navbar .navbar-text {
+        color: #ffffff;
+    }
+
+        .navbar .navbar-text a {
+            color: #546747;
+        }
+
+            .navbar .navbar-text a:hover,
+            .navbar .navbar-text a:focus {
+                color: #546747;
+            }
+
+    .navbar .navbar-nav .nav-link {
+        color: #546747;
+        border-radius: .25rem;
+        margin: 0 0.25em;
+    }
+
+        .navbar .navbar-nav .nav-link:not(.disabled):hover,
+        .navbar .navbar-nav .nav-link:not(.disabled):focus {
+            color: #BBC8BA;
+        }
+
+    .navbar .navbar-nav .nav-item.active .nav-link,
+    .navbar .navbar-nav .nav-item.active .nav-link:hover,
+    .navbar .navbar-nav .nav-item.active .nav-link:focus,
+    .navbar .navbar-nav .nav-item.show .nav-link,
+    .navbar .navbar-nav .nav-item.show .nav-link:hover,
+    .navbar .navbar-nav .nav-item.show .nav-link:focus {
+        color: #BBC8BA;
+        background-color: #52437B;
+    }
+
+    .navbar .navbar-toggle {
+        border-color: #52437B;
+    }
+
+        .navbar .navbar-toggle:hover,
+        .navbar .navbar-toggle:focus {
+            background-color: #52437B;
+        }
+
+        .navbar .navbar-toggle .navbar-toggler-icon {
+            color: #52437B;
+        }
+
+    .navbar .navbar-collapse,
+    .navbar .navbar-form {
+        border-color: #52437B;
+    }
+
+    .navbar .navbar-link {
+        color: #52437B;
+    }
+
+        .navbar .navbar-link:hover {
+            color: #BBC8BA;
+        }
+
+
+
+
+/* MI PERFIL*/
 body {
     margin-top: 20px;
     color: #1a202c;
     text-align: left;
-    background-color: #e2e8f0;
 }
 
 .main-body {
@@ -123,6 +186,7 @@ button {
     border-radius: 5px;
     color: white;
 }
+
 
 /* CALENDARIO */
 
