@@ -10,13 +10,14 @@ namespace ASFY_Proyecto.Models
         private int _codigo;
         private string _Nombre;
         private int _codigoProgramas;
+        private string _Link;
 
-
-        public Rutinas(int codigo, string Nombre, int codigoProgramas)
+        public Rutinas(int codigo, string Nombre, int codigoProgramas, string Link)
         {
             _codigo = codigo;
             _Nombre = Nombre;
             _codigoProgramas = codigoProgramas;
+            _Link = Link;
         }
 
         public int codigo
@@ -54,6 +55,18 @@ namespace ASFY_Proyecto.Models
             set
             {
                 _codigoProgramas = value;
+            }
+        }
+        public string Link
+        {
+            get
+            {
+                return _Link;
+            }
+
+            set
+            {
+                _Link = value;
             }
         }
 
