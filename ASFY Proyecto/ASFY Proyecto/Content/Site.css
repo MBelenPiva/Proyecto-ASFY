@@ -326,4 +326,7 @@ button {
     background-color: rgba(0,0,0,0.8);
 }
 
-
+.verde {
+    color: #546747;
+    font-weight: bold;
+}
