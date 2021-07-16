@@ -182,6 +182,7 @@
     <Content Include="Views\ASFY\QuienesSomos.cshtml" />
     <Content Include="Views\ASFY\Registrarse.cshtml" />
     <Content Include="Views\ASFY\Programas.cshtml" />
+    <Content Include="Views\ASFY\Calendario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

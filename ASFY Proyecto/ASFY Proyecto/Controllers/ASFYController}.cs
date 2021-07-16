@@ -40,6 +40,10 @@ namespace ASFY_Proyecto.Controllers
         {
             return View();
         }
+        public ActionResult Calendario()
+        {
+            return View();
+        }
         public ActionResult QuienesSomos()
         {
             return View();

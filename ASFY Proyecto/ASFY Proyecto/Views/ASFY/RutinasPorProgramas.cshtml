@@ -9,7 +9,7 @@
 
 <div class="container">
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Repeticiones</th>
@@ -21,13 +21,14 @@
 
         @foreach (Rutinas rutinas in ViewBag.RutinasMostrarProgramas)
         {
-            <tr>
-                <td>@rutinas.Nombre</td>
-                <td>15 minutos </td>
-            </tr>
-
-        }
-    </table>
+            <thead class="thead-light">
+                <tr>
+                    <td>@rutinas.Nombre</td>
+                    <td>15 minutos </td>
+                </tr>
+                </thead>
+                }
+        </table>
 </div>
 <br>
 <br>

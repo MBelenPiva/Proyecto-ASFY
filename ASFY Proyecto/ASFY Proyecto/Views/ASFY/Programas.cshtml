@@ -9,26 +9,31 @@
 
 <div class="container">
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">
-                    
-                    </th>
+
+                </th>
             </tr>
         </thead>
 
         @foreach (Programas programas in ViewBag.Programas)
         {
-            <tr>
-                <td>@programas.Nombre</td>
-                <td>@programas.Descripcion</td>
-                <td>@Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoProgramas = programas.codigo }, null) </td>
-            </tr>
 
-        }   
-    </table>
+            <thead class="thead-light">
+                <tr>
+                    <td>
+                        @programas.Nombre
+                    </td>
+                    <td>@programas.Descripcion</td>
+                    <td>@Html.ActionLink("Rutinas", "RutinasPorProgramas", "ASFY", new { codigoProgramas = programas.codigo }, null) </td>
+                </tr>
+                </thead>
+
+                }
+        </table>
 </div>
 <br>
 <br>
