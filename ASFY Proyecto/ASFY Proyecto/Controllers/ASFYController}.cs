@@ -28,6 +28,13 @@ namespace ASFY_Proyecto.Controllers
         public ActionResult RutinasPorProgramas(int codigoProgramas)
         {
             ViewBag.RutinasMostrarProgramas = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
+            ViewBag.Programas = BDD.ObtenerProgramas();
+            return View();
+        }
+
+        public ActionResult LinkVideo(int codigoProgramas)
+        {
+            ViewBag.RutinasMostrarProgramas = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
             return View();
         }
 
