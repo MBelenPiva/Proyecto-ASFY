@@ -13,7 +13,7 @@
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Repeticiones</th>
-
+                <th scope="col">Rutinas</th>
                 <th scope="col">
 
                 </th>
@@ -29,7 +29,7 @@
         <tr>
             <td>@rutinas.Nombre</td>
             <td>15 minutos </td>
-            <td>@Html.ActionLink("Video", "LinkVideo", "ASFY", new { idRutina = rutinas.codigo }, null) </td>
+            <td>@Html.ActionLink("Ver Video", "LinkVideo", "ASFY", new { idRutina = rutinas.codigo }, null) </td>
 
             @*@foreach (Programas programas in ViewBag.Programas)
         {
