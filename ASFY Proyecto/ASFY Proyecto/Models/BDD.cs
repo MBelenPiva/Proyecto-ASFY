@@ -120,5 +120,32 @@ namespace ASFY_Proyecto.Models
             return listaRutinasPorProgramas;
         }
 
+        public static Usuarios ObtenerUsuarioPorId(int intId)
+        {
+            Usuarios usuarios = new Usuarios();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Usuarios WHERE id=" + intId.ToString();
+            SqlDataReader lector = consulta.ExecuteReader();
+            if (lector.Read())
+            {
+                int Id = Convert.ToInt32(lector["Id"]);
+                string Nombre = lector["Nombre"].ToString();
+                string Apellido = lector["Apellido"].ToString();
+                string Email = lector["Email"].ToString();
+                int Altura = Convert.ToInt32(lector["Altura"]);
+                float Peso = Convert.ToInt32(lector["Peso"]);
+                string Contrasena = lector["Contrasena"].ToString();
+                DateTime FechaDeNacimiento = Convert.ToDateTime(lector["FechaDeNacimiento"]);
+                string URLFoto = lector["URLFoto"].ToString();
+                string Direccion = lector["Direccion"].ToString();
+
+                usuarios = new Usuarios(Id, Nombre, Apellido, Email, Altura, Peso, Contrasena,
+                FechaDeNacimiento, URLFoto, Direccion);
+            }
+            BDD.Desconectar(con);
+            return usuarios;
+        }
+
     }
 }

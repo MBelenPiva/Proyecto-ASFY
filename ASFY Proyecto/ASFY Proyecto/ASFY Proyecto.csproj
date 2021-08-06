@@ -129,6 +129,7 @@
     <Compile Include="Models\RutinasPorProgramas.cs" />
     <Compile Include="Models\Rutinas.cs" />
     <Compile Include="Models\Programas.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
