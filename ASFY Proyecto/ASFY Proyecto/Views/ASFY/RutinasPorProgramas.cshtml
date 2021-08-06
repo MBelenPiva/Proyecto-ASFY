@@ -24,20 +24,22 @@
         {
 
     <thead class="thead-light">
-        @foreach (Programas programas in ViewBag.Programas)
+       
+
+        <tr>
+            <td>@rutinas.Nombre</td>
+            <td>15 minutos </td>
+            <td>@Html.ActionLink("Video", "LinkVideo", "ASFY", new { idRutina = rutinas.codigo }, null) </td>
+
+            @*@foreach (Programas programas in ViewBag.Programas)
         {
+            <td>@Html.ActionLink("Video", "LinkVideo", "ASFY", new { codigoProgramas = programas.codigo }, null) </td>
 
-            <tr>
-                <td>@rutinas.Nombre</td>
-                <td>15 minutos </td>
-
-                <td>@Html.ActionLink("Video", "LinkVideo", "ASFY", new { codigoProgramas = programas.codigo }, null) </td>
-
-
-            </tr>
-        }
+        }*@
+        </tr>
+        
         </thead>
-            }
+        }
         
     </table>
 

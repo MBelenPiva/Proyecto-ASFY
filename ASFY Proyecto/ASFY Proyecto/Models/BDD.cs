@@ -8,7 +8,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=LAPTOP-F61O4L1M\SQLEXPRESS01; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-CBO-01; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {
@@ -52,6 +52,28 @@ namespace ASFY_Proyecto.Models
             }
             BDD.Desconectar(con);
             return listaRutinas;
+        }
+
+
+        public static Rutinas ObtenerRutinaPorId(int intId)
+        {
+            Rutinas rutinas = new Rutinas();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Rutinas WHERE id="+ intId.ToString();
+            SqlDataReader lector = consulta.ExecuteReader();
+            if (lector.Read())
+            {
+                int Id = Convert.ToInt32(lector["Id"]);
+                int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
+                string Nombre = lector["Nombre"].ToString();
+                string Link = lector["Link"].ToString();
+
+
+                rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link);
+            }
+            BDD.Desconectar(con);
+            return rutinas;
         }
 
         public static List<Programas> ObtenerProgramas()

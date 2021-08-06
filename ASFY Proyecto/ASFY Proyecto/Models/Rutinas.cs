@@ -12,6 +12,14 @@ namespace ASFY_Proyecto.Models
         private int _codigoProgramas;
         private string _Link;
 
+        public Rutinas()
+        {
+            _codigo = 0;
+            _Nombre = "";
+            _codigoProgramas = 0;
+            _Link = "";
+        }
+
         public Rutinas(int codigo, string Nombre, int codigoProgramas, string Link)
         {
             _codigo = codigo;
