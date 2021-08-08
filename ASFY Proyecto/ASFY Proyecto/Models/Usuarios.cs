@@ -13,7 +13,7 @@ namespace ASFY_Proyecto.Models
         private string _Email;
         private string _Contrasena;
         private DateTime _FechaDeNacimiento;
-        private float _Altura;
+        private int _Altura;
         private float _Peso;
         private string _URLFoto;
         private string _Direccion;
@@ -30,6 +30,23 @@ namespace ASFY_Proyecto.Models
             _Peso = 0;
             _URLFoto = "";
             _Direccion = "";
+        }
+
+
+        public Usuarios(int codigo, string Nombre, string Apellido, string Email, string Contrasena,
+            DateTime FechaDeNacimiento, int Altura, float Peso, string URLFoto, string Direccion)
+        {
+            _codigo = codigo;
+            _Nombre = Nombre;
+            _Apellido = Apellido;
+            _Email = Email;
+            _Contrasena = Contrasena;
+            _FechaDeNacimiento = FechaDeNacimiento;
+            _Altura = Altura;
+            _Peso = Peso;
+            _URLFoto = URLFoto;
+            _Direccion = Direccion;
+
         }
 
 
@@ -70,16 +87,90 @@ namespace ASFY_Proyecto.Models
                 _Apellido = value;
             }
         }
-        public string Link
+        public string Email
         {
             get
             {
-                return _Link;
+                return _Email;
             }
 
             set
             {
-                _Link = value;
+                _Email = value;
+            }
+        }
+        public string Contrasena
+        {
+            get
+            {
+                return _Contrasena;
+            }
+
+            set
+            {
+                _Contrasena = value;
+            }
+        }
+        public DateTime FechaDeNacimiento
+        {
+            get
+            {
+                return _FechaDeNacimiento;
+            }
+
+            set
+            {
+                _FechaDeNacimiento = value;
+            }
+        }
+
+        public int Altura
+        {
+            get
+            {
+                return _Altura;
+            }
+
+            set
+            {
+                _Altura = value;
+            }
+        }
+        public float Peso
+        {
+            get
+            {
+                return _Peso;
+            }
+
+            set
+            {
+                _Peso = value;
+            }
+        }
+
+        public string URLFoto
+        {
+            get
+            {
+                return _URLFoto;
+            }
+
+            set
+            {
+                _URLFoto = value;
+            }
+        }
+        public string Direccion
+        {
+            get
+            {
+                return _Direccion;
+            }
+
+            set
+            {
+                _Direccion = value;
             }
         }
 
@@ -88,4 +179,3 @@ namespace ASFY_Proyecto.Models
 }
 
 
-}

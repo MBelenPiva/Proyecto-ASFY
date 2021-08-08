@@ -43,8 +43,9 @@ namespace ASFY_Proyecto.Controllers
             ViewBag.Programas = BDD.ObtenerProgramas();
             return View();
         }
-        public ActionResult MiPerfil()
+        public ActionResult MiPerfil(int idUsuario)
         {
+            ViewBag.Usuario = BDD.ObtenerRutinaPorId(idUsuario);
             return View();
         }
         public ActionResult Calendario()

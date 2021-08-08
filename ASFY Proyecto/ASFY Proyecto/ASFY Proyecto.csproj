@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="Models\ASFY.cs" />
     <Compile Include="Models\BDD.cs" />
+    <Compile Include="Models\login.cs" />
     <Compile Include="Models\RutinasPorProgramas.cs" />
     <Compile Include="Models\Rutinas.cs" />
     <Compile Include="Models\Programas.cs" />

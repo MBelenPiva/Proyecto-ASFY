@@ -106,7 +106,6 @@ namespace ASFY_Proyecto.Models
             return rutinas; //Devuelvo las rutinas 
         }
 
-       
 
     }
 
