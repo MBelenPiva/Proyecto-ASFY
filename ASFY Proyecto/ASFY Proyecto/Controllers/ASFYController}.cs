@@ -28,7 +28,10 @@ namespace ASFY_Proyecto.Controllers
             {
                 // NO EXISTE!
 
-                
+                var error = new
+                {
+                    error = "Lo sentimos no hay ruta registrada"
+                };
 
             }
             else
