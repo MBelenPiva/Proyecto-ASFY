@@ -14,6 +14,27 @@ namespace ASFY_Proyecto.Controllers
            ASFY.InicializarASFY();
             return View();
         }
+        
+        [HttpPost]
+        public ActionResult Login()
+        {
+            string email = Request["email"];
+            string contrasena = Request["contrasena"];
+
+            Usuarios user;
+            user = BDD.ObtenerUsuario(email, contrasena);
+
+            if (user.Codigo == 0)
+            {
+                // NO EXISTE!
+            }
+            else
+            {
+                // SI EXISTE!
+            }
+
+            return View("InicioSesion");
+        }
 
         public ActionResult Registrarse()
         {

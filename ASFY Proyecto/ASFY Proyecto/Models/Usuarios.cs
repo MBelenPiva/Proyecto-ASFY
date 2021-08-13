@@ -7,173 +7,48 @@ namespace ASFY_Proyecto.Models
 {
     public class Usuarios
     {
-        private int _codigo;
-        private string _Nombre;
-        private string _Apellido;
-        private string _Email;
-        private string _Contrasena;
-        private DateTime _FechaDeNacimiento;
-        private int _Altura;
-        private float _Peso;
-        private string _URLFoto;
-        private string _Direccion;
+        public int Codigo{ get; set; }
+
+        public string Nombre{ get; set; }
+        public string Apellido{ get; set; }
+        public string Email{ get; set; }
+        public string Contrasena{ get; set; }
+        public DateTime FechaDeNacimiento{ get; set; }
+        public int Altura{ get; set; }
+        public float Peso{ get; set; }
+        public string URLFoto{ get; set; }
+        public string Direccion{ get; set; }
 
         public Usuarios()
         {
-            _codigo = 0;
-            _Nombre = "";
-            _Apellido = "";
-            _Email = "";
-            _Contrasena = "";
-            _FechaDeNacimiento = ;
-            _Altura = 0;
-            _Peso = 0;
-            _URLFoto = "";
-            _Direccion = "";
+            Codigo = 0;
+            Nombre = "";
+            Apellido = "";
+            Email = "";
+            Contrasena = "";
+            FechaDeNacimiento = DateTime.MinValue;
+            Altura = 0;
+            Peso = 0;
+            URLFoto = "";
+            Direccion = "";
         }
 
 
         public Usuarios(int codigo, string Nombre, string Apellido, string Email, string Contrasena,
             DateTime FechaDeNacimiento, int Altura, float Peso, string URLFoto, string Direccion)
         {
-            _codigo = codigo;
-            _Nombre = Nombre;
-            _Apellido = Apellido;
-            _Email = Email;
-            _Contrasena = Contrasena;
-            _FechaDeNacimiento = FechaDeNacimiento;
-            _Altura = Altura;
-            _Peso = Peso;
-            _URLFoto = URLFoto;
-            _Direccion = Direccion;
+            this.Codigo = codigo;
+            this.Nombre = Nombre;
+            this.Apellido = Apellido;
+            this.Email = Email;
+            this.Contrasena = Contrasena;
+            this.FechaDeNacimiento = FechaDeNacimiento;
+            this.Altura = Altura;
+            this.Peso = Peso;
+            this.URLFoto = URLFoto;
+            this.Direccion = Direccion;
 
         }
-
-
-        public int codigo
-        {
-            get
-            {
-                return _codigo;
-            }
-
-            set
-            {
-                _codigo = value;
-            }
-        }
-
-        public string Nombre
-        {
-            get
-            {
-                return _Nombre;
-            }
-
-            set
-            {
-                _Nombre = value;
-            }
-        }
-        public string Apellido
-        {
-            get
-            {
-                return _Apellido;
-            }
-
-            set
-            {
-                _Apellido = value;
-            }
-        }
-        public string Email
-        {
-            get
-            {
-                return _Email;
-            }
-
-            set
-            {
-                _Email = value;
-            }
-        }
-        public string Contrasena
-        {
-            get
-            {
-                return _Contrasena;
-            }
-
-            set
-            {
-                _Contrasena = value;
-            }
-        }
-        public DateTime FechaDeNacimiento
-        {
-            get
-            {
-                return _FechaDeNacimiento;
-            }
-
-            set
-            {
-                _FechaDeNacimiento = value;
-            }
-        }
-
-        public int Altura
-        {
-            get
-            {
-                return _Altura;
-            }
-
-            set
-            {
-                _Altura = value;
-            }
-        }
-        public float Peso
-        {
-            get
-            {
-                return _Peso;
-            }
-
-            set
-            {
-                _Peso = value;
-            }
-        }
-
-        public string URLFoto
-        {
-            get
-            {
-                return _URLFoto;
-            }
-
-            set
-            {
-                _URLFoto = value;
-            }
-        }
-        public string Direccion
-        {
-            get
-            {
-                return _Direccion;
-            }
-
-            set
-            {
-                _Direccion = value;
-            }
-        }
-
     }
 
 }

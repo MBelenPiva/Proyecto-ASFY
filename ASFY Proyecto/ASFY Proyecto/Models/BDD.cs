@@ -8,7 +8,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=LAPTOP-F61O4L1M\SQLEXPRESS01; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-BTA-14; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {
@@ -129,19 +129,42 @@ namespace ASFY_Proyecto.Models
             SqlDataReader lector = consulta.ExecuteReader();
             if (lector.Read())
             {
-                int Id = Convert.ToInt32(lector["Id"]);
-                string Nombre = lector["Nombre"].ToString();
-                string Apellido = lector["Apellido"].ToString();
-                string Email = lector["Email"].ToString();
-                int Altura = Convert.ToInt32(lector["Altura"]);
-                float Peso = Convert.ToInt32(lector["Peso"]);
-                string Contrasena = lector["Contrasena"].ToString();
-                DateTime FechaDeNacimiento = Convert.ToDateTime(lector["FechaDeNacimiento"]);
-                string URLFoto = lector["URLFoto"].ToString();
-                string Direccion = lector["Direccion"].ToString();
+                usuarios.Codigo             = Convert.ToInt32(lector["Id"]);
+                usuarios.Nombre             = (lector["Nombre"] == DBNull.Value)    ? "" : Convert.ToString(lector["Nombre"]);
+                usuarios.Apellido           = (lector["Apellido"] == DBNull.Value)  ? "" : lector["Apellido"].ToString();
+                usuarios.Email              = (lector["Email"] == DBNull.Value)     ? "" : lector["Email"].ToString();
+                usuarios.Altura             = Convert.ToInt32(lector["Altura"]);
+                usuarios.Peso               = Convert.ToInt32(lector["Peso"]);
+                usuarios.Contrasena         = (lector["Contrasena"] == DBNull.Value)     ? "" : lector["Contrasena"].ToString();
+                usuarios.FechaDeNacimiento  = Convert.ToDateTime(lector["FechaDeNacimiento"]);
+                usuarios.URLFoto            = (lector["URLFoto"] == DBNull.Value)   ? "" : lector["URLFoto"].ToString();
+                usuarios.Direccion          = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
+                
+            }
+            BDD.Desconectar(con);
+            return usuarios;
+        }
 
-                usuarios = new Usuarios(Id, Nombre, Apellido, Email, Altura, Peso, Contrasena,
-                FechaDeNacimiento, URLFoto, Direccion);
+        public static Usuarios ObtenerUsuario(string email, string contrasena)
+        {
+            Usuarios usuarios = new Usuarios();
+            SqlConnection con = BDD.Conectar();
+            SqlCommand consulta = con.CreateCommand();
+            consulta.CommandText = "Select * from Usuarios WHERE email='" + email + "' AND contrasena='" + contrasena + "'";
+            SqlDataReader lector = consulta.ExecuteReader();
+            if (lector.Read())
+            {
+                usuarios.Codigo             = Convert.ToInt32(lector["Id"]);
+                usuarios.Nombre             = (lector["Nombre"] == DBNull.Value)    ? "" : Convert.ToString(lector["Nombre"]);
+                usuarios.Apellido           = (lector["Apellido"] == DBNull.Value)  ? "" : lector["Apellido"].ToString();
+                usuarios.Email              = (lector["Email"] == DBNull.Value)     ? "" : lector["Email"].ToString();
+                usuarios.Altura             = Convert.ToInt32(lector["Altura"]);
+                usuarios.Peso               = Convert.ToInt32(lector["Peso"]);
+                usuarios.Contrasena         = (lector["Contrasena"] == DBNull.Value)     ? "" : lector["Contrasena"].ToString();
+                usuarios.FechaDeNacimiento  = Convert.ToDateTime(lector["FechaDeNacimiento"]);
+                usuarios.URLFoto            = (lector["URLFoto"] == DBNull.Value)   ? "" : lector["URLFoto"].ToString();
+                usuarios.Direccion          = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
+                
             }
             BDD.Desconectar(con);
             return usuarios;
