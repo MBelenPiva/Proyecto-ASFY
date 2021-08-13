@@ -34,9 +34,10 @@
                     No tiene una cuenta? @Html.ActionLink("Registrarse", "Registrarse", "ASFY", null, new { @class = "nav-link" })
                 </p>
 
-                @*<div name="UsuarioNoEncontrado" id="UsuarioNoEncontrado" class="alert alert-danger" role="alert">
-                    Su usuaro/ clave no es correcto
-                </div>*@
+                <div name="UsuarioNoEncontrado" id="UsuarioNoEncontrado" class="alert alert-danger" role="alert">
+                    @ViewBag.error
+                </div> 
+
             </form>
         </article>
         <br>

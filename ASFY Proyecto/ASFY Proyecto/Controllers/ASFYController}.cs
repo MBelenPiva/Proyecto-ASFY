@@ -27,16 +27,11 @@ namespace ASFY_Proyecto.Controllers
             if (user.Codigo == 0)
             {
                 // NO EXISTE!
-
-                var error = new
-                {
-                    error = "Lo sentimos no hay ruta registrada"
-                };
-
+                ViewBag.error = "usuario incorrecto";
             }
             else
             {
-                // SI EXISTE!
+                //return View("MiPerfil");
             }
 
             return View("InicioSesion");
