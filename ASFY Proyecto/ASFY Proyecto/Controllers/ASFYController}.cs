@@ -27,6 +27,9 @@ namespace ASFY_Proyecto.Controllers
             if (user.Codigo == 0)
             {
                 // NO EXISTE!
+
+                
+
             }
             else
             {
