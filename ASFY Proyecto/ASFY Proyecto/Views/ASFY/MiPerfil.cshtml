@@ -3,21 +3,6 @@
     ViewBag.Title = "MiPerfil";
 }
 
-<br>
-<br>
-
-<div class="container">
-    <br>
-    <h1 style="text-align:center;"> <b> [ @ViewBag.Usuario.Nombre ]</b> </h1>
-    <br>
-
-    <iframe width="840" height="473" src="@ViewBag.Usuario.Apellido" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br>
-<br>
-<br>
-
-
 
 <br>
 <br>
@@ -30,9 +15,9 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="~/Content/Persona IMG 3.jpg" alt="Admin" class="rounded-circle" width="163">
+                            <img src="~/Content/Persona IMG 1.jpg" alt="Admin" class="rounded-circle" width="163">
                             <div class="mt-3">
-                                <h4>Cristina Angela Park</h4>
+                                <h4> @ViewBag.Usuarios.Nombre </h4>
                                 <p class="text-secondary mb-1">Estudiante</p>
                                 <p class="text-muted font-size-sm">Buenos Aires, Capital, Argentina</p>
                                 <button class="btn btn-outline-secondary">Editar</button>
@@ -47,28 +32,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Nombre completo</h6>
+                                <h6 class="mb-0">Nombre </h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Cristina Angela Park
+                                @ViewBag.Usuarios.Nombre  
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Sexo</h6>
+                                <h6 class="mb-0">Apellido</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Femenino
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Fecha de nacimiento</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                5/08/2003
+                                @ViewBag.Usuarios.Apellido
                             </div>
                         </div>
                         <hr>
@@ -77,16 +53,26 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                crisangela648@gmail.com
+                                @ViewBag.Usuarios.Email
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Teléfono</h6>
+                                <h6 class="mb-0">Fecha de nacimiento</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                +54 9 11 5555 5555
+                                
+                                @ViewBag.Usuarios.FechaDeNacimiento
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Sexo</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                @ViewBag.Usuarios.Sexo
                             </div>
                         </div>
                         <hr>
@@ -95,7 +81,7 @@
                                 <h6 class="mb-0">Dirección</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Flores, Buenos Aires, Argentina
+                                 @ViewBag.Usuarios.Direccion 
                             </div>
                         </div>
                     </div>

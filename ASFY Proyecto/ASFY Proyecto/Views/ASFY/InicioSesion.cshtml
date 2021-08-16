@@ -1,4 +1,4 @@
-﻿
+﻿@using ASFY_Proyecto.Models;
 @{
     ViewBag.Title = "InicioSesion";
 }
@@ -36,7 +36,13 @@
 
                 <div name="UsuarioNoEncontrado" id="UsuarioNoEncontrado" class="alert alert-danger" role="alert">
                     @ViewBag.error
-                </div> 
+                </div>
+
+                <div name="UsuarioEncontrado" id="UsuarioEncontrado" class="alert alert-success" role="alert">
+                    @ViewBag.encontrado
+                </div>
+
+                @*@Html.ActionLink("MiPerfil", "MiPerfil", "ASFY", new { codigoUsuarios = Usuarios.Codigo }, null)*@
 
             </form>
         </article>

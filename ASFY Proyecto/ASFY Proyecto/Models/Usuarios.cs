@@ -19,6 +19,8 @@ namespace ASFY_Proyecto.Models
         public string URLFoto{ get; set; }
         public string Direccion{ get; set; }
 
+        public string Sexo { get; set; }
+
         public Usuarios()
         {
             Codigo = 0;
@@ -31,6 +33,7 @@ namespace ASFY_Proyecto.Models
             Peso = 0;
             URLFoto = "";
             Direccion = "";
+            Sexo = "";
         }
 
 
@@ -47,6 +50,7 @@ namespace ASFY_Proyecto.Models
             this.Peso = Peso;
             this.URLFoto = URLFoto;
             this.Direccion = Direccion;
+            this.Sexo = Sexo;
 
         }
     }

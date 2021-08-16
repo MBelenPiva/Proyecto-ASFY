@@ -20,18 +20,20 @@ namespace ASFY_Proyecto.Controllers
         {
             string email = Request["email"];
             string contrasena = Request["contrasena"];
+            
 
             Usuarios user;
             user = BDD.ObtenerUsuario(email, contrasena);
 
+
             if (user.Codigo == 0)
             {
                 // NO EXISTE!
-                ViewBag.error = "usuario incorrecto";
+                ViewBag.error = "usuario/contrasena incorrecto";
             }
             else
             {
-                //return View("MiPerfil");
+                ViewBag.encontrado = "usuario encontrado";
             }
 
             return View("InicioSesion");
@@ -65,9 +67,9 @@ namespace ASFY_Proyecto.Controllers
             ViewBag.Programas = BDD.ObtenerProgramas();
             return View();
         }
-        public ActionResult MiPerfil(int idUsuario)
+        public ActionResult MiPerfil(int intId)
         {
-            ViewBag.Usuario = BDD.ObtenerRutinaPorId(idUsuario);
+            ViewBag.Usuarios = BDD.ObtenerUsuarioPorId(intId);
             return View();
         }
         public ActionResult Calendario()

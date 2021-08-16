@@ -8,7 +8,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=A-BTA-14; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=LAPTOP-F61O4L1M\SQLEXPRESS01; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {
@@ -129,17 +129,18 @@ namespace ASFY_Proyecto.Models
             SqlDataReader lector = consulta.ExecuteReader();
             if (lector.Read())
             {
-                usuarios.Codigo             = Convert.ToInt32(lector["Id"]);
-                usuarios.Nombre             = (lector["Nombre"] == DBNull.Value)    ? "" : Convert.ToString(lector["Nombre"]);
-                usuarios.Apellido           = (lector["Apellido"] == DBNull.Value)  ? "" : lector["Apellido"].ToString();
-                usuarios.Email              = (lector["Email"] == DBNull.Value)     ? "" : lector["Email"].ToString();
-                usuarios.Altura             = Convert.ToInt32(lector["Altura"]);
-                usuarios.Peso               = Convert.ToInt32(lector["Peso"]);
-                usuarios.Contrasena         = (lector["Contrasena"] == DBNull.Value)     ? "" : lector["Contrasena"].ToString();
-                usuarios.FechaDeNacimiento  = Convert.ToDateTime(lector["FechaDeNacimiento"]);
-                usuarios.URLFoto            = (lector["URLFoto"] == DBNull.Value)   ? "" : lector["URLFoto"].ToString();
-                usuarios.Direccion          = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
-                
+                usuarios.Codigo = Convert.ToInt32(lector["Id"]);
+                usuarios.Nombre = (lector["Nombre"] == DBNull.Value) ? "" : Convert.ToString(lector["Nombre"]);
+                usuarios.Apellido = (lector["Apellido"] == DBNull.Value) ? "" : lector["Apellido"].ToString();
+                usuarios.Email = (lector["Email"] == DBNull.Value) ? "" : lector["Email"].ToString();
+                usuarios.Altura = Convert.ToInt32(lector["Altura"]);
+                usuarios.Peso = Convert.ToInt32(lector["Peso"]);
+                usuarios.Contrasena = (lector["Contrasena"] == DBNull.Value) ? "" : lector["Contrasena"].ToString();
+                usuarios.FechaDeNacimiento = Convert.ToDateTime(lector["FechaDeNacimiento"]);
+                usuarios.URLFoto = (lector["URLFoto"] == DBNull.Value) ? "" : lector["URLFoto"].ToString();
+                usuarios.Direccion = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
+                usuarios.Sexo = (lector["Sexo"] == DBNull.Value) ? "" : lector["Sexo"].ToString();
+
             }
             BDD.Desconectar(con);
             return usuarios;
@@ -164,7 +165,8 @@ namespace ASFY_Proyecto.Models
                 usuarios.FechaDeNacimiento  = Convert.ToDateTime(lector["FechaDeNacimiento"]);
                 usuarios.URLFoto            = (lector["URLFoto"] == DBNull.Value)   ? "" : lector["URLFoto"].ToString();
                 usuarios.Direccion          = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
-                
+                usuarios.Sexo = (lector["Sexo"] == DBNull.Value) ? "" : lector["Sexo"].ToString();
+
             }
             BDD.Desconectar(con);
             return usuarios;
