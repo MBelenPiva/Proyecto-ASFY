@@ -14,7 +14,15 @@ namespace ASFY_Proyecto.Controllers
            ASFY.InicializarASFY();
             return View();
         }
-        
+
+
+        public ActionResult Logout()
+        {
+            // Elimino el Usuario de la SESSION!
+            Session["USUARIO"] = null;
+            return View("InicioSesion");
+        }
+
         [HttpPost]
         public ActionResult Login()
         {
@@ -33,6 +41,8 @@ namespace ASFY_Proyecto.Controllers
             }
             else
             {
+                // Agrego el Usuario a la SESSION!
+                Session["USUARIO"] = user;
                 ViewBag.encontrado = "usuario encontrado";
             }
 

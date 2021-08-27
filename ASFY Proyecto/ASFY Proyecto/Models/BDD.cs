@@ -8,7 +8,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=LAPTOP-F61O4L1M\SQLEXPRESS01; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-CBO-01; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {

@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@using ASFY_Proyecto.Models;
+@{
+    string strUsuario;
+
+    if ((Session["USUARIO"]) != null) {
+        strUsuario = ((Usuarios)(Session["USUARIO"])).Nombre;
+    } else {
+        strUsuario = "-";
+    }
+
+    ViewBag.Title = "Programas";
+}
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -53,8 +65,13 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
+                    [@strUsuario]
                     <button class="btn btn-sm btn-outline-secondary" type="button">
                         @Html.ActionLink("Login", "InicioSesion", "ASFY", null, new { @class = "nav-link" })
+                    </button>
+
+                    <button class="btn btn-sm btn-outline-secondary" type="button">
+                        @Html.ActionLink("Cerrar sesion", "Logout", "ASFY", null, new { @class = "nav-link" })
                     </button>
 
                     <button class="btn btn-sm btn-outline-secondary" type="button">
