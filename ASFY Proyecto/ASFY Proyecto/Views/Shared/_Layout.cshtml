@@ -66,13 +66,21 @@
                 </ul>
                 <span class="navbar-text">
                     [@strUsuario]
-                    <button class="btn btn-sm btn-outline-secondary" type="button">
-                        @Html.ActionLink("Login", "InicioSesion", "ASFY", null, new { @class = "nav-link" })
-                    </button>
+                    @{
 
-                    <button class="btn btn-sm btn-outline-secondary" type="button">
-                        @Html.ActionLink("Cerrar sesion", "Logout", "ASFY", null, new { @class = "nav-link" })
-                    </button>
+                        if ((Session["USUARIO"]) != null)
+                        {
+                            <button class="btn btn-sm btn-outline-secondary" type="button">
+                                @Html.ActionLink("LogOut", "Logout", "ASFY", null, new { @class = "nav-link" })
+                            </button>
+                        }
+
+                        else
+                        {
+                            <button class="btn btn-sm btn-outline-secondary" type="button">
+                                @Html.ActionLink("Login", "InicioSesion", "ASFY", null, new { @class = "nav-link" })
+                            </button>
+                        }}
 
                     <button class="btn btn-sm btn-outline-secondary" type="button">
                         @Html.ActionLink("Registrarse", "Registrarse", "ASFY", null, new { @class = "nav-link" })

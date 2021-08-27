@@ -49,6 +49,11 @@ namespace ASFY_Proyecto.Controllers
             return View("InicioSesion");
         }
 
+        public ActionResult MiPerfil()
+        {
+            return View();
+        }
+
         public ActionResult Registrarse()
         {
             return View();
@@ -77,11 +82,7 @@ namespace ASFY_Proyecto.Controllers
             ViewBag.Programas = BDD.ObtenerProgramas();
             return View();
         }
-        public ActionResult MiPerfil(int intId)
-        {
-            ViewBag.Usuarios = BDD.ObtenerUsuarioPorId(intId);
-            return View();
-        }
+        
         public ActionResult Calendario()
         {
             return View();
