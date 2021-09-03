@@ -56,6 +56,16 @@ namespace ASFY_Proyecto.Controllers
 
         public ActionResult Registrarse()
         {
+            //var user = new Usuarios
+            //{
+            //    Nombre = UserName,
+            //    Apellido = FirstName,
+            //    Email = LastName,
+            //    Contrasena = Email,
+            //    Contrasena = Email,
+
+            //};
+
             return View();
         }
 
