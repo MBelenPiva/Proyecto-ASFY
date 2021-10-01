@@ -56,15 +56,26 @@ namespace ASFY_Proyecto.Controllers
 
         public ActionResult Registrarse()
         {
-            var user = new Usuarios
-            {
-                Nombre = UserName,
-                Apellido = FirstName,
-                Email = LastName,
-                Contrasena = Email,
-                Contrasena = Email,
 
-            };
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Ingresar()
+        {
+            Usuarios nuevoUsuario;
+            
+            int intUltimoId;
+            string nombre = Request["txtNombre"];
+            string apellido = Request["txtApellido"];
+            string email = Request["txtEmail"];
+            DateTime FechaDeNacimiento = Convert.ToDateTime(Request["txtFechaDeNacimiento"]);
+            string contrasena = Request["txtContrasena"];
+
+            
+            intUltimoId  = BDD.IngresarUsuario(nombre, apellido, email, FechaDeNacimiento, contrasena);
+            nuevoUsuario = BDD.ObtenerUsuarioPorId(intUltimoId);
+
 
             return View();
         }

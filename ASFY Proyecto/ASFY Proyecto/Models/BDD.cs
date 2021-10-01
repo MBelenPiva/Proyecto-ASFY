@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace ASFY_Proyecto.Models
 {
@@ -129,17 +130,17 @@ namespace ASFY_Proyecto.Models
             SqlDataReader lector = consulta.ExecuteReader();
             if (lector.Read())
             {
-                usuarios.Codigo = Convert.ToInt32(lector["Id"]);
-                usuarios.Nombre = (lector["Nombre"] == DBNull.Value) ? "" : Convert.ToString(lector["Nombre"]);
-                usuarios.Apellido = (lector["Apellido"] == DBNull.Value) ? "" : lector["Apellido"].ToString();
-                usuarios.Email = (lector["Email"] == DBNull.Value) ? "" : lector["Email"].ToString();
-                usuarios.Altura = Convert.ToInt32(lector["Altura"]);
-                usuarios.Peso = Convert.ToInt32(lector["Peso"]);
-                usuarios.Contrasena = (lector["Contrasena"] == DBNull.Value) ? "" : lector["Contrasena"].ToString();
-                usuarios.FechaDeNacimiento = Convert.ToDateTime(lector["FechaDeNacimiento"]);
-                usuarios.URLFoto = (lector["URLFoto"] == DBNull.Value) ? "" : lector["URLFoto"].ToString();
-                usuarios.Direccion = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
-                usuarios.Sexo = (lector["Sexo"] == DBNull.Value) ? "" : lector["Sexo"].ToString();
+                usuarios.Codigo             = Convert.ToInt32(lector["Id"]);
+                usuarios.Nombre             = (lector["Nombre"] == DBNull.Value) ? "" : Convert.ToString(lector["Nombre"]);
+                usuarios.Apellido           = (lector["Apellido"] == DBNull.Value) ? "" : lector["Apellido"].ToString();
+                usuarios.Email              = (lector["Email"] == DBNull.Value) ? "" : lector["Email"].ToString();
+                usuarios.Altura             = (lector["Altura"] == DBNull.Value) ? 0 : Convert.ToInt32(lector["Altura"]);
+                usuarios.Peso               = (lector["Peso"] == DBNull.Value) ? 0 : Convert.ToInt32(lector["Peso"]);
+                usuarios.Contrasena         = (lector["Contrasena"] == DBNull.Value) ? "" : lector["Contrasena"].ToString();
+                usuarios.FechaDeNacimiento  = (lector["FechaDeNacimiento"] == DBNull.Value) ? DateTime.MinValue : Convert.ToDateTime(lector["FechaDeNacimiento"]);
+                usuarios.URLFoto            = (lector["URLFoto"] == DBNull.Value) ? "" : lector["URLFoto"].ToString();
+                usuarios.Direccion          = (lector["Direccion"] == DBNull.Value) ? "" : lector["Direccion"].ToString();
+                usuarios.Sexo               = (lector["Sexo"] == DBNull.Value) ? "" : lector["Sexo"].ToString();
 
             }
             BDD.Desconectar(con);
@@ -168,8 +169,29 @@ namespace ASFY_Proyecto.Models
                 usuarios.Sexo = (lector["Sexo"] == DBNull.Value) ? "" : lector["Sexo"].ToString();
 
             }
-            BDD.Desconectar(con);
+
+                BDD.Desconectar(con);
             return usuarios;
+        }
+
+        public static int IngresarUsuario(string nombre, string apellido, string email, DateTime FechaDeNacimiento, string contrasena)
+        {
+            int     intUltimoId;
+            object  returnObject;
+            SqlConnection con = BDD.Conectar();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Usuarios_Insert";
+            cmd.CommandType= CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Apellido", apellido);
+
+            returnObject = cmd.ExecuteScalar();
+            intUltimoId = Convert.ToInt32(returnObject);
+            //consulta.CommandText = "Select * from Usuarios WHERE email='" + email + "' AND contrasena='" + contrasena + "'";
+
+            BDD.Desconectar(con);
+            return intUltimoId;
         }
 
     }
