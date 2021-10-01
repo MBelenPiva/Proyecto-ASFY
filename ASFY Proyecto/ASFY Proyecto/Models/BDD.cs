@@ -185,11 +185,13 @@ namespace ASFY_Proyecto.Models
 
             cmd.Parameters.AddWithValue("@Nombre", nombre);
             cmd.Parameters.AddWithValue("@Apellido", apellido);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@FechaDeNacimiento", FechaDeNacimiento);
+            cmd.Parameters.AddWithValue("@Contrasena", contrasena);
 
             returnObject = cmd.ExecuteScalar();
             intUltimoId = Convert.ToInt32(returnObject);
-            //consulta.CommandText = "Select * from Usuarios WHERE email='" + email + "' AND contrasena='" + contrasena + "'";
-
+           
             BDD.Desconectar(con);
             return intUltimoId;
         }
