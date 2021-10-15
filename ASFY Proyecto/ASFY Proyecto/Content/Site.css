@@ -88,7 +88,18 @@ footer {
         }
 
 
+/* QUIENES SOMOS */
+.qns {
+    font-size: 18px;
+}
 
+.cont {
+    font-weight: bold;
+}
+
+.MV {
+    font-size: 18px;
+}
 
 /* MI PERFIL*/
 body {

@@ -77,7 +77,7 @@ namespace ASFY_Proyecto.Controllers
             nuevoUsuario = BDD.ObtenerUsuarioPorId(intUltimoId);
 
 
-            return View();
+            return View("Registrarse");
         }
 
         public ActionResult Home()
