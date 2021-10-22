@@ -198,6 +198,31 @@ button {
     color: white;
 }
 
+.border-warning {
+    border-color: #546747 !important;
+    font-size: small;
+    background-color: #C4DCC8;
+}
+
+.dropbtn {
+    background-color: #A4A4A4;
+    color: white;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+}
+
+    .border-warning option {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown:hover .dropbtn {
+    background-color: #91A994;
+}
+
 
 /* CALENDARIO */
 

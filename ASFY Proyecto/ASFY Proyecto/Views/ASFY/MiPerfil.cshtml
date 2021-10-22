@@ -83,16 +83,14 @@
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Sexo</h6>
                             </div>
-                            <div class="dropdown">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Sexo
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">F</a>
-                                    <a class="dropdown-item" href="#">M</a>
-                                    <a class="dropdown-item" href="#">OTRO</a>
-                                </div>
+                            <div class="dropdown">  
+                                <select class="form-control border-warning dropbtn" id="dropdownMenuButton">
+                                    <option class="dropdown-item" selected="selected">Elegir</option>
+                                    <option class="dropdown-item">F</option>
+                                    <option class="dropdown-item">M</option>
+                                    <option class="dropdown-item">OTRO</option>
+                                </select>
+                              
                             </div>
                                 @usuarioLogueado.Sexo
                             </div>
