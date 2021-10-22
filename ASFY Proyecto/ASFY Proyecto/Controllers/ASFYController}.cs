@@ -46,7 +46,7 @@ namespace ASFY_Proyecto.Controllers
                 ViewBag.encontrado = "usuario encontrado";
             }
 
-            return View("InicioSesion");
+            return View("Home");
         }
 
         public ActionResult MiPerfil()
@@ -77,7 +77,7 @@ namespace ASFY_Proyecto.Controllers
             nuevoUsuario = BDD.ObtenerUsuarioPorId(intUltimoId);
 
 
-            return View("Registrarse");
+            return View("InicioSesion");
         }
 
         public ActionResult Home()
