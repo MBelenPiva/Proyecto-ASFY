@@ -13,6 +13,17 @@
 
     <iframe width="840" height="473" src="@ViewBag.Rutina.Link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+@*@foreach (Rutinas rutinas in ViewBag.RutinasMostrarProgramas)
+{
+
+    <td>@Html.ActionLink("Ver Video", "LinkVideo", "ASFY", new { idRutina = rutinas.codigo }, null) </td>
+    <iframe width="840" height="473" src="@ViewBag.Rutina.Link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+}*@
+
+
 <br>
 <br>
 <br>
