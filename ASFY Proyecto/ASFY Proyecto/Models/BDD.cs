@@ -9,7 +9,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=A-CBO-01; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-CVE-01; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {
@@ -46,9 +46,10 @@ namespace ASFY_Proyecto.Models
                 int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();
                 string Link = lector["Link"].ToString();
+                string Descripcion = lector["Descripcion"].ToString();
 
 
-                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link);
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link, Descripcion);
                 listaRutinas.Add(rutinas);
             }
             BDD.Desconectar(con);
@@ -69,9 +70,9 @@ namespace ASFY_Proyecto.Models
                 int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();
                 string Link = lector["Link"].ToString();
+                string Descripcion = lector["Descripcion"].ToString();
 
-
-                rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link);
+                rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link, Descripcion);
             }
             BDD.Desconectar(con);
             return rutinas;
@@ -113,8 +114,9 @@ namespace ASFY_Proyecto.Models
                 int IdProgrmas = Convert.ToInt32(lector["IdPrograma"]);
                 string Nombre = lector["Nombre"].ToString();
                 string Link = lector["Link"].ToString();
+                string Descripcion = lector["Descripcion"].ToString();
 
-                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link);
+                Rutinas rutinas = new Rutinas(Id, Nombre, IdProgrmas, Link, Descripcion);
                 listaRutinasPorProgramas.Add(rutinas);
             }
             BDD.Desconectar(con);

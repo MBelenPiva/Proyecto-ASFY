@@ -11,7 +11,22 @@
     <h1 style="text-align:center;"> <b> [ @ViewBag.Rutina.Nombre ]</b> </h1>
     <br>
 
-    <iframe width="840" height="473" src="@ViewBag.Rutina.Link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <iframe width="520" height="337" src="@ViewBag.Rutina.Link" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <h2> <b> Descripcion </b> </h2>
+                <h6> @ViewBag.Rutina.Descripcion  </h6>
+                <br>
+                <h3> <b> Por cuanto tiempo debe realizar ele ejercicio  </b> </h3>
+                <h6> 15 minutos </h6>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 @*@foreach (Rutinas rutinas in ViewBag.RutinasMostrarProgramas)

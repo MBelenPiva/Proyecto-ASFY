@@ -92,10 +92,10 @@ namespace ASFY_Proyecto.Controllers
             return View();
         }
 
-        public ActionResult LinkVideo(int idRutina, int codigoProgramas)
+        public ActionResult LinkVideo(int idRutina)
         {
             ViewBag.Rutina = BDD.ObtenerRutinaPorId(idRutina);
-            ViewBag.RutinasMostrarProgramas = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
+            //ViewBag.RutinasMostrarProgramas = BDD.ObtenerRutinasPorProgramas(codigoProgramas);
             ViewBag.Programas = BDD.ObtenerProgramas();
             return View();
         }
