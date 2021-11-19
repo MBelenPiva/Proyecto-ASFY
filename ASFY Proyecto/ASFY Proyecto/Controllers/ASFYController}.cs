@@ -68,6 +68,8 @@ namespace ASFY_Proyecto.Controllers
 
             intUltimoId = BDD.IngresarEdicionUsuario(Nombre, email, FechaDeNacimiento, Sexo, Direccion);
             nuevoUsuario = BDD.ObtenerUsuarioPorId(intUltimoId);
+            Session["USUARIO"] = nuevoUsuario;
+
 
             return View("MiPerfil");
         }

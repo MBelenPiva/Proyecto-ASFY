@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web;
 
 namespace ASFY_Proyecto.Models
 {
@@ -200,24 +201,25 @@ namespace ASFY_Proyecto.Models
 
         public static int IngresarEdicionUsuario(string nombre, string email, DateTime FechaDeNacimiento, string sexo, string direccion) 
         {
-            int intUltimoId;
-            object returnObject;
+            int intRegsAffected;
+            int Id;
             SqlConnection con = BDD.Conectar();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Usuarios_Insert";
+            cmd.CommandText = "Usuarios_Update";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            Id = ((Usuarios)(HttpContext.Current.Session["USUARIO"])).Codigo;
+            cmd.Parameters.AddWithValue("@Id", Id);
             cmd.Parameters.AddWithValue("@Nombre", nombre);
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@FechaDeNacimiento", FechaDeNacimiento);
             cmd.Parameters.AddWithValue("@Sexo", sexo);
             cmd.Parameters.AddWithValue("@Direccion", direccion);
 
-            returnObject = cmd.ExecuteScalar();
-            intUltimoId = Convert.ToInt32(returnObject);
+            intRegsAffected = cmd.ExecuteNonQuery();
 
             BDD.Desconectar(con);
-            return intUltimoId;
+            return Id;
         }
 
     }
