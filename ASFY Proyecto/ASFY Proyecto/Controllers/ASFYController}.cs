@@ -54,9 +54,26 @@ namespace ASFY_Proyecto.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Editar()
+        {
+            Usuarios nuevoUsuario;
+
+            int intUltimoId;
+            string Nombre = Request["Nombre"];
+            string email = Request["email"];
+            DateTime FechaDeNacimiento = Convert.ToDateTime(Request["FechaDeNacimiento"]);
+            string Sexo = Request["Sexo"];
+            string Direccion = Request["Direccion"];
+
+            intUltimoId = BDD.IngresarEdicionUsuario(Nombre, email, FechaDeNacimiento, Sexo, Direccion);
+            nuevoUsuario = BDD.ObtenerUsuarioPorId(intUltimoId);
+
+            return View("MiPerfil");
+        }
+
         public ActionResult Registrarse()
         {
-
             return View();
         }
 

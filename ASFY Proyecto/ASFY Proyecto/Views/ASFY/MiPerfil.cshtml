@@ -14,13 +14,12 @@
 
 }
 
-
-
 <br>
 <br>
 <br>
 <div class="container">
     <div class="main-body">
+
 
         <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
@@ -32,90 +31,103 @@
                                 <h4> @usuarioLogueado.Nombre </h4>
                                 <p class="text-secondary mb-1">Estudiante</p>
                                 <p class="text-muted font-size-sm">Buenos Aires, Capital, Argentina</p>
-                                <button class="btn btn-outline-secondary">Editar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-8">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Nombre </h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                @usuarioLogueado.Nombre
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Apellido</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                @usuarioLogueado.Apellido
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                @usuarioLogueado.Email
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Fecha de nacimiento</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-
-                                @usuarioLogueado.FechaDeNacimiento
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Sexo</h6>
-                            </div>
-                            <div class="dropdown">
-                                <select class="form-control border-warning dropbtn" id="dropdownMenuButton">
-                                    <option class="dropdown-item">Elegir</option>
-                                    <option class="dropdown-item" @(usuarioLogueado.Sexo == "F" ? "selected='selected'" :  "") >F</option>
-                                    <option class="dropdown-item" @(usuarioLogueado.Sexo == "M" ? "selected='selected'" :  "")>M</option>
-                                    <option class="dropdown-item" @(usuarioLogueado.Sexo == "OTRO" ? "selected='selected'" :  "")>OTRO</option>
-                                </select>
-
-                            </div>
-                           
-                        </div>
-                        
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Dirección</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                @usuarioLogueado.Direccion
+                             
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
+
+
+            <form method="post" action="@Url.Action("Editar", "ASFY")">
+
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nombre </h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <input type="text" class="form-control" name="Nombre" id="Nombre" value="@usuarioLogueado.Nombre">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Apellido</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <input type="text" class="form-control" name="Apellido" id="Apellido" value="@usuarioLogueado.Apellido">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <input type="email" class="form-control" name="Email"  id="Email" value="@usuarioLogueado.Email">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Fecha de nacimiento</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <input type="datetime" class="form-control"  name="FechaDeNacimiento" id="FechaDeNacimiento" value="@usuarioLogueado.FechaDeNacimiento">
+
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Sexo</h6>
+                                </div>
+                                <div class="dropdown">
+                                    <select class="form-control border-warning dropbtn" name="Sexo" id="Sexo">
+                                        <option class="dropdown-item">Elegir</option>
+                                        <option class="dropdown-item" @(usuarioLogueado.Sexo == "F" ? "selected='selected'" : "")>F</option>
+                                        <option class="dropdown-item" @(usuarioLogueado.Sexo == "M" ? "selected='selected'" : "")>M</option>
+                                        <option class="dropdown-item" @(usuarioLogueado.Sexo == "OTRO" ? "selected='selected'" : "")>OTRO</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Dirección</h6>
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <input type="text" class="form-control"  name="Direccion" id="Direccion" value="@usuarioLogueado.Direccion">
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+
+                                </div>
+                                <div class="col-sm-8 text-secondary">
+                                    <button type="submit" class="btn btn-outline-secondary">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <br />
         <br>
-        <button type="button" class="btn btn-secondary"> @Html.ActionLink("Calendario", "Calendario", "ASFY")</button>
-
     </div>
 </div>
 
 <br>
 <br>
+
+<button type="button" class="btn btn-secondary"> @Html.ActionLink("Calendario", "Calendario", "ASFY")</button>

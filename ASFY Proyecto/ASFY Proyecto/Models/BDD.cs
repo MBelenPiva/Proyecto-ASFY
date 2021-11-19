@@ -9,7 +9,7 @@ namespace ASFY_Proyecto.Models
 {
     public static class BDD
     {
-        private static string _connectionString = @"Server=A-CVE-01; Database=ASFY; Trusted_Connection=True";
+        private static string _connectionString = @"Server=A-CRO-05; Database=ASFY; Trusted_Connection=True";
 
         private static SqlConnection Conectar() 
         {
@@ -194,6 +194,28 @@ namespace ASFY_Proyecto.Models
             returnObject = cmd.ExecuteScalar();
             intUltimoId = Convert.ToInt32(returnObject);
            
+            BDD.Desconectar(con);
+            return intUltimoId;
+        }
+
+        public static int IngresarEdicionUsuario(string nombre, string email, DateTime FechaDeNacimiento, string sexo, string direccion) 
+        {
+            int intUltimoId;
+            object returnObject;
+            SqlConnection con = BDD.Conectar();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Usuarios_Insert";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Nombre", nombre);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@FechaDeNacimiento", FechaDeNacimiento);
+            cmd.Parameters.AddWithValue("@Sexo", sexo);
+            cmd.Parameters.AddWithValue("@Direccion", direccion);
+
+            returnObject = cmd.ExecuteScalar();
+            intUltimoId = Convert.ToInt32(returnObject);
+
             BDD.Desconectar(con);
             return intUltimoId;
         }
